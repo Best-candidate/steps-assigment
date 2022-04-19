@@ -4,8 +4,7 @@ import { Model } from 'mongoose';
 import { Creator } from 'src/schemas/creator.schema';
 
 @Injectable()
-export class CreatorService {
+export class CreatorsService {
     constructor (@InjectModel('Post') private creatorModel: Model<Creator>) {}
 
-    
 }
