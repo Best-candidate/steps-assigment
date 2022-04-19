@@ -21,4 +21,13 @@ export class PostsController {
     ) {
         return await this.postsService.insertPost(postTitle, postContent, postCreatorId)
     }
+
+    //Function for calculating runtime
+    @Post('internal')
+    async getPostsInternal(
+        @Body('start') postStart: number,
+        @Body('limit') postLimit: number
+    ) {
+        return await this.postsService.getPosts(postStart, postLimit)
+    }
 }
