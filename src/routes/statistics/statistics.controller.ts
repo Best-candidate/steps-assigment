@@ -9,4 +9,9 @@ export class StatisticsController {
     async getTopCreators() {
         return await this.statisticsService.getTopCreators()
     }
+
+    @Get('runtimes')
+    async getRuntime() {
+        return await this.statisticsService.getRuntimes()
+    }
 }
