@@ -14,7 +14,7 @@ export class PostsService {
         return result.id as string;
     }
 
-    async getPosts() {
-        
+    async getPosts(start: number, limit: number) {
+        return this.postModel.find().sort({_id: 1}).skip(start).limit(limit)
     }
 }

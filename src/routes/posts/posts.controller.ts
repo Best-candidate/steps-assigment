@@ -6,8 +6,11 @@ export class PostsController {
     constructor( private postsService: PostsService) {}
 
     @Get()
-    getPosts(): any {
-        return null
+    async getPosts(
+        @Body('start') postStart: number,
+        @Body('limit') postLimit: number
+    ) {
+        return await this.postsService.getPosts(postStart, postLimit)
     }
 
     @Post()
@@ -15,7 +18,6 @@ export class PostsController {
         @Body('title') postTitle: string,
         @Body('content') postContent: string
     ) {
-        const id = await this.postsService.insertPost(postTitle, postContent)
-        return id
+        return await this.postsService.insertPost(postTitle, postContent)
     }
 }
