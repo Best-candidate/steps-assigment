@@ -16,8 +16,9 @@ export class PostsController {
     @Post()
     async insertPost(
         @Body('title') postTitle: string,
-        @Body('content') postContent: string
+        @Body('content') postContent: string,
+        @Body('creatorId') postCreatorId: string 
     ) {
-        return await this.postsService.insertPost(postTitle, postContent)
+        return await this.postsService.insertPost(postTitle, postContent, postCreatorId)
     }
 }
