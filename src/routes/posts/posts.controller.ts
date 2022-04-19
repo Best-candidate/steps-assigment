@@ -13,6 +13,11 @@ export class PostsController {
         return await this.postsService.getPosts(postStart, postLimit)
     }
 
+    @Get('postsnumber')
+    async getPostNumber() {
+        return this.postsService.getPostsNumber()
+    }
+
     @Post()
     async insertPost(
         @Body('title') postTitle: string,

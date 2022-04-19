@@ -17,4 +17,9 @@ export class PostsService {
     async getPosts(start: number, limit: number) {
         return await this.postModel.find().sort({_id: 1}).skip(start).limit(limit)
     }
+
+    async getPostsNumber() {
+        return await this.postModel.estimatedDocumentCount()
+        
+    }
 }
